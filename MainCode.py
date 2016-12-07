@@ -1,0 +1,18 @@
+from flask import send_from_directory, redirect
+from RegisterApi import register_api
+from Logining_api import logining_api
+from Config import app
+
+@app.route('/')
+def index():
+   return redirect('/index.html')
+
+@app.route('/<path:path>')
+def send_js(path):
+   return send_from_directory('static', path)
+
+app.register_blueprint(register_api)
+app.register_blueprint(logining_api)
+
+if __name__ == "__main__":
+    app.run()
