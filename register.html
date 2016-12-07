@@ -86,11 +86,11 @@
 											var email = $("input#inputEmail3").val();
 											var password = $("input#inputPassword3").val();
 											var username = $("input#inputUsername3") .val();
-											var login = $ ("input#inputLogin3").val();
+											var login = $("input#inputLogin3").val();
 
 											$.ajax({
 												type: "POST",
-												url: "http;//127.0.0.1:5000/api/register",
+												url: "/api/register",
 												dataType: "json",
 												data: ({
 													'username': username,
