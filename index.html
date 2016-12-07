@@ -70,7 +70,33 @@
         </div>
         </div>
     </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jq.."></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jq..">integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 <script src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("button#submitBtn").click( function()
+        {
+            var password = $("input#inputPassword3").val();
+            var login = $ ("input#inputLogin3").val();
+
+            $.ajax({
+                type: "POST",
+                url: "http;//127.0.0.1:5000/api/login",
+                dataType: "json",
+                data: ({
+                    'password': password,
+                    'login': login
+                }),
+                success: function() {
+                    alert("Дані відправлено на сервер!");
+                },
+                error: function() {
+                    alert("Щось пішло не так! :(");
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
