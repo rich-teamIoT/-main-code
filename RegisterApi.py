@@ -51,5 +51,5 @@ def register():
     cur.close()
     return jsonify(message='user created', status='success'), 201
 
-def vailRequest():
+#def vailRequest():
     #Перевірити запит
