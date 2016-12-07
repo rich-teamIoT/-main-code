@@ -22,3 +22,4 @@ def singIN():
     if cur.fetchone()[0]==1:
        return jsonify(message="Success logining",status="success"),201
     cur.close()
+    return jsonify(message='incorect login or password'), 401
