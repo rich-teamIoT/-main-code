@@ -1,0 +1,242 @@
+<!--User page: navbar and vertical drop down menu -->
+
+<!DOCTYPE HTML> 
+<html lang="en">
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Журнал НУ "ЛП"</title>
+<style type="text/css">
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background-color: #f1f1f1;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #c8c8d0;
+}
+
+.active {
+    background-color: #c8c8d0;
+	padding-left:20px;
+    overflow:auto;
+}
+  
+*{padding:0;margin:0;}
+
+/*VERTICAL MENU*/
+nav.vertical{
+  position:relative;
+  background:#667;
+  width: 10%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+/* ALL UL */
+nav.vertical ul{
+  list-style: none;
+  text-align: center;
+}
+/* ALL LI */
+nav.vertical li{
+  position:relative;
+}
+/* ALL A */
+nav.vertical a{
+  display:block;
+  color:#000000;
+  text-decoration:none;
+  padding:10px 15px;
+  transition:0.2s;
+}
+/* ALL A HOVER */
+nav.vertical li:hover > a{
+  background:#c8c8d0;
+}
+
+/* INNER UL HIDE */
+nav.vertical ul ul{
+  background:rgba(0,0,0,0.1);
+  padding-left:20px;
+  transition: max-height 0.2s ease-out;
+  max-height:0;
+  overflow:hidden;
+}
+/* INNER UL SHOW */
+nav.vertical li:hover > ul{
+  max-height:500px;
+  transition: max-height 0.25s ease-in;
+}
+
+body  {
+	background: url(http://glavnoe.ua/media/images/news/27/88/78/278878_default.jpg) no-repeat center fixed; 
+    background-size: cover;
+}
+
+</style>
+
+<body>
+<ul>
+  <li><a href="#journal">ЖУРНАЛ НУ "ЛП"</a></li>
+  <li><a href="#home">Моя сторінка</a></li>
+  <li style="float:right"><a class="active" href="#profile">Мій профіль</a>
+    <ul>
+        <li><a href="#exit">Вихід</a></li>
+    </ul>
+  </li>
+</ul>
+
+<nav class="vertical">
+<ul>
+	
+    <li><a href="#attendance">Відвідування</a> 
+      <ul>
+        
+        <li><a href="#analysis">Мат. аналіз</a>
+          <ul>
+            <li><a href="#lect">Лекції</a></li>
+            <li><a href="#prac">Практичні</a></li>  
+          </ul>
+        </li>		
+		
+		<li><a href="#discrete">Дискретна матем.</a>
+          <ul>
+            <li><a href="#lect">Лекції</a></li>
+            <li><a href="#prac">Практичні</a></li>  
+          </ul>
+        </li>
+		
+		<li><a href="#programming">Програмування</a>
+          <ul>
+            <li><a href="#lect">Лекції</a></li>
+            <li><a href="#prac">Практичні</a></li> 
+            <li><a href="#lab">Лабораторні</a></li>
+          </ul>
+        </li>
+		
+        <li><a href="#physics">Фізика</a>
+          <ul>
+            <li><a href="#lect">Лекції</a></li>
+            <li><a href="#prac">Практичні</a></li> 
+            <li><a href="#lab">Лабораторні</a></li>
+          </ul>
+        </li>
+		
+		<li><a href="#ukr">Укр. мова</a>
+          <ul>
+            <li><a href="#lect">Лекції</a></li>
+            <li><a href="#prac">Практичні</a></li>  
+          </ul>
+        </li>
+		
+		<li><a href="#eng">Англ. мова</a>
+		  <ul>
+            <li><a href="#prac">Практичні</a></li>  
+          </ul>
+		</li>
+		
+	    <li><a href="#eltech">Електротехніка</a>
+          <ul>
+            <li><a href="#lect">Лекції</a></li>
+            <li><a href="#prac">Практичні</a></li>  
+          </ul>
+        </li>
+		
+		<li><a href="#sport">Фіз. виховання</a>
+		  <ul>
+            <li><a href="#prac">Практичні</a></li>  
+          </ul>
+		</li>
+		
+      </ul>
+    </li>
+		
+	
+    <li><a href="#progress">Успішність</a> 
+      <ul>
+		
+        <li><a href="#analysis">Мат. аналіз</a>
+          <ul>
+            <li><a href="#lect">Лекції</a></li>
+            <li><a href="#prac">Практичні</a></li>  
+          </ul>
+        </li>
+		
+	    <li><a href="#discrete">Дискретна матем.</a>
+          <ul>
+            <li><a href="#lect">Лекції</a></li>
+            <li><a href="#prac">Практичні</a></li>  
+          </ul>
+        </li>
+		
+		<li><a href="#programming">Програмування</a>
+          <ul>
+            <li><a href="#lect">Лекції</a></li>
+            <li><a href="#prac">Практичні</a></li> 
+            <li><a href="#lab">Лабораторні</a></li>
+          </ul>
+        </li>
+		
+        <li><a href="#physics">Фізика</a>
+          <ul>
+            <li><a href="#lect">Лекції</a></li>
+            <li><a href="#prac">Практичні</a></li> 
+            <li><a href="#lab">Лабораторні</a></li>
+          </ul>
+        </li>
+		
+		<li><a href="#ukr">Укр. мова</a>
+          <ul>
+            <li><a href="#lect">Лекції</a></li>
+            <li><a href="#prac">Практичні</a></li>  
+          </ul>
+        </li>
+		
+		<li><a href="#eng">Англ. мова</a>
+		  <ul>
+            <li><a href="#prac">Практичні</a></li>  
+          </ul>
+		</li>
+		
+	    <li><a href="#eltech">Електротехніка</a>
+          <ul>
+            <li><a href="#lect">Лекції</a></li>
+            <li><a href="#prac">Практичні</a></li>  
+          </ul>
+        </li>
+		
+		<li><a href="#sport">Фіз. виховання</a>
+		  <ul>
+            <li><a href="#prac">Практичні</a></li>  
+          </ul>
+		</li>
+		
+      </ul>
+    </li>
+	
+	
+    <li><a href="#gpa">Середній бал</a></li> 
+  </ul>
+</nav>
+
+ </body>
+</html>
