@@ -17,9 +17,9 @@
 		}
 	</style>
 </head>
-<body background="222.jpg">
-	<h1 style="color:honeydew; text-align:center; font-family:Cursive;"> <big> Вітаємо в електронному журналі Національного університету "Львівська політехніка"</big> </h1>
-	<h2 style="color:honeydew; text-align:center; font-family:cursive;">Тут ви можете переглянути свою успішність, відвідування та вирахувати свій середній бал</h2>
+<body background="lvivska_politehnika.jpg">
+	<h1 style="color:black; text-align:center; font-family:Cursive;"> <big> Вітаємо в електронному журналі Національного університету "Львівська політехніка"</big> </h1>
+	<h2 style="color:black; text-align:center; font-family:cursive;">Тут ви можете переглянути свою успішність, відвідування та вирахувати свій середній бал</h2>
 
 	<div class="container">
 		<div class="row">
@@ -33,7 +33,7 @@
 									<label for="inputEmail3" class="col-sm-3 control-label">
 										Ім'я користувача</label>
 										<div class="col-sm-9">
-											<input type="Ім'я користувача" class="form-control" id="inputName3" placeholder="Ім'я користувача" required>
+											<input type="Ім'я користувача" class="form-control" id="inputUsername3" placeholder="Ім'я користувача" required>
 										</div>
 									</div>
 									<div class="form-group">
@@ -77,36 +77,41 @@
 									</div>
 								</div>
 								<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
-								<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+        $(document).ready(function () {
+            $("button#submitBtn").click( function()
+            {
+                var email = $("input#inputEmail3").val();
+                var password = $("input#inputPassword3").val();
+                var username = $("input#inputUsername3") .val();
+                var login = $("input#inputLogin3").val();
 
-								<script type="text/javascript">
-									$(document).ready(function () {
-										$("button#submitBtn").click( function()
-										{
-											var email = $("input#inputEmail3").val();
-											var password = $("input#inputPassword3").val();
-											var name = $("input#inputName3") .val();
-											var login = $("input#inputLogin3").val();
-
-											$.ajax({
-												type: "POST",
-												url: "/api/register",
-												dataType: "json",
-												data: ({
-													'name': name,
-													'login': login,
-													'email': email,
-													'password': password
-												}),
-												success: function() {
-													alert("Дані відправлено на сервер!");
-												},
-												error: function() {
-													alert("Щось пішло не так! :(");
-												}
-											});
-										});
-									});
-								</script>
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json",
+                    url: "/api/register",
+                    dataType: "json",
+                    data: ({
+                        'username': username,
+                        'login': login,
+                        'email': email,
+                        'password': password
+                    }),
+                    success: function() {
+                        alert("Дані відправлено на сервер!");
+                    },
+                    error: function() {
+                        alert("Щось пішло не так! :(");
+                    },
+                    statusCode: {
+                        404: function() {
+                            alert("Сторінка не знайдена!");
+                        }
+                    }
+                });
+            });
+        });
+	</script>
 </body>
 </html>
