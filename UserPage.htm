@@ -1,5 +1,4 @@
-<!--User page: navbar and vertical drop down menu -->
-
+<!--User page - vertical drop down menu -->
 <!DOCTYPE HTML> 
 <html lang="en">
 <html>
@@ -7,45 +6,20 @@
   <meta charset="utf-8">
   <title>Журнал НУ "ЛП"</title>
 <style type="text/css">
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: auto;
-    background-color: #f1f1f1;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: #c8c8d0;
-}
-
-.active {
-    background-color: #c8c8d0;
-	padding-left:20px;
-    overflow:auto;
-}
   
 *{padding:0;margin:0;}
+
+body  {
+	background: url(http://glavnoe.ua/media/images/news/27/88/78/278878_default.jpg) no-repeat center fixed; 
+    background-size: cover;
+}
 
 /*VERTICAL MENU*/
 nav.vertical{
   position:relative;
   background:#667;
   width: 10%;
-  background-color: #f1f1f1;
+  background-color:#f8f8f8;
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -87,26 +61,34 @@ nav.vertical li:hover > ul{
   transition: max-height 0.25s ease-in;
 }
 
-body  {
-	background: url(http://glavnoe.ua/media/images/news/27/88/78/278878_default.jpg) no-repeat center fixed; 
-    background-size: cover;
-}
-
 </style>
 
-<body>
-<ul>
-  <li><a href="#journal">ЖУРНАЛ НУ "ЛП"</a></li>
-  <li><a href="#home">Моя сторінка</a></li>
-  <li style="float:right"><a class="active" href="#profile">Мій профіль</a>
-    <ul>
-        <li><a href="#exit">Вихід</a></li>
-    </ul>
-  </li>
-</ul>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        .center-block {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </script>
+</head>
 
-<nav class="vertical">
+<body>
+<nav class="vertical"> 
 <ul>
+
+<li><a href="#attendance">---</a>
+<li><a href="#attendance">---</a>
+<li><a href="#attendance">---</a>
+<li><a href="#attendance">---</a>
+<li><a href="#attendance">---</a>
+
 	
     <li><a href="#attendance">Відвідування</a> 
       <ul>
@@ -234,9 +216,44 @@ body  {
     </li>
 	
 	
-    <li><a href="#gpa">Середній бал</a></li> 
+    <li><a href="#gpa">Середній бал</a>
+	<ul>
+            <li><a href="#sub">Із предмету</a></li>  
+			<li><a href="#sum">За семестр</a></li> 
+          </ul>
+	</li> 
   </ul>
 </nav>
 
- </body>
+<nav class="navbar navbar-default"> 
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">ЖУРНАЛ "НУ ЛП"</a>
+        </div>
+		
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="profile.html">Моя сторінка</a></li>  
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Мій профіль<span class="caret"></span></a>                
+		    <ul class="drop down-menu">
+                        <li><a href="perstor.html">Переглянути</a> </li>
+                        <li><a href="redpage.html">Редагувати профіль</a></li>
+                        <li><a href="index.html">Вийти</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+</body>
 </html>
