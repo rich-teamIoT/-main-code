@@ -1,5 +1,5 @@
 from flask import send_from_directory, redirect
-from RegisterApi import register_api
+from Register_api import register_api
 from Logining_api import logining_api
 from Config import app
 

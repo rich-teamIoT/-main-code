@@ -1,5 +1,7 @@
 from flask import request, abort, jsonify, Blueprint
 from Config import mysql
+from UUID import uuid_api
+from Config import app
 logining_api=Blueprint('logining_api', __name__)
 
 @logining_api.route('/api/login', methods=['Post'])
@@ -22,4 +24,6 @@ def singIN():
     if cur.fetchone()[0]==1:
        return jsonify(message="Success logining",status="success"),201
     cur.close()
-    return jsonify(message='incorect login or password'), 401
+
+def UUiD():
+    app.register_blueprint(uuid_api)
