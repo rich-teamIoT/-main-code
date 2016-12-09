@@ -84,7 +84,7 @@
             {
                 var email = $("input#inputEmail3").val();
                 var password = $("input#inputPassword3").val();
-                var username = $("input#inputUsername3") .val();
+                var name = $("input#inputUsername3") .val();
                 var login = $("input#inputLogin3").val();
 
                 $.ajax({
@@ -93,7 +93,7 @@
                     url: "/api/register",
                     dataType: "json",
                     data: ({
-                        'username': username,
+                        'name': name,
                         'login': login,
                         'email': email,
                         'password': password
