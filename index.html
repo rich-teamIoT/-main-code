@@ -8,7 +8,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/cs..">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script>
         .center-block {
             display: block;
@@ -70,34 +70,30 @@
         </div>
         </div>
     </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jq..">integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $("button#submitBtn").click( function()
         {
             var password = $("input#inputPassword3").val();
-            var login = $("input#inputLogin3").val();
+            var login = $ ("input#inputlogin3").val();
+
+            var data = {
+                'login': login,
+                'password': password
+            };
 
             $.ajax({
                 type: "POST",
-                contentType: "application/json",
                 url: "/api/login",
                 dataType: "json",
-                data: ({
-                    'login': login,
-                    'password': password
-                }),
+                data: JSON.stringify(data),
                 success: function() {
                     alert("Дані відправлено на сервер!");
                 },
                 error: function() {
                     alert("Щось пішло не так! :(");
-                },
-                statusCode: {
-                    404: function() {
-                        alert("Сторінка не знайдена!");
-                    }
                 }
             });
         });
