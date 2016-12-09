@@ -5,7 +5,8 @@ register_api = Blueprint('register_api', __name__)
 @register_api.route('/api/register', methods=['Post'])
 def register():
     print(request.json)
-
+    if not request.json:
+        abort(400)
     if 'login' not in request.json or 'name' not in request.json or 'email' not in request.json or 'password' not in request.json:
         abort(400)
 
