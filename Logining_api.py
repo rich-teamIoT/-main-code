@@ -24,8 +24,6 @@ def singIN():
     param_logining=(login, password)
     cur.execute(query_logining, param_logining)
     if cur.fetchone()[0]==1:
-       return jsonify(message="Success logining",status="success"),201
+       return jsonify(session_id="1"), 200
     cur.close()
 
-def UUiD():
-    app.register_blueprint(uuid_api)

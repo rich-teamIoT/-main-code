@@ -96,7 +96,9 @@
 
                 $.ajax({
                     type: "POST",
+					method: "POST",
                     url: "/api/register",
+					contentType: "application/json",
                     dataType: "json",
                     data: JSON.stringify(data),
                     success: function() {
