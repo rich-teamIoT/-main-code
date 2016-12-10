@@ -6,6 +6,8 @@ logining_api=Blueprint('logining_api', __name__)
 
 @logining_api.route('/api/login', methods=['Post'])
 def singIN():
+    if not request.json:
+        abort(400)
     print(request.json)
     if 'login' not in request.json or 'password' not in request.json:
         abort(400)
