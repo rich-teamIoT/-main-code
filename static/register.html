@@ -86,18 +86,30 @@
                 var password = $("input#inputPassword3").val();
                 var name = $("input#inputUsername3") .val();
                 var login = $("input#inputlogin3").val();
+<<<<<<< HEAD:static/register.html
+=======
+
+>>>>>>> develop:register.html
                 var data = {
                     'name': name,
                     'login': login,
                     'email': email,
                     'password': password
                 };
+<<<<<<< HEAD:static/register.html
                 $.ajax({
 					type: "POST",
 					method: "POST",
                     url: "/api/register",
 					contentType: "application/json",
 					dataType: "json",
+=======
+
+                $.ajax({
+                    type: "POST",
+                    url: "/api/register",
+                    dataType: "json",
+>>>>>>> develop:register.html
                     data: JSON.stringify(data),
                     success: function() {
                         alert("Дані відправлено на сервер!");
