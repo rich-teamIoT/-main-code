@@ -1,4 +1,4 @@
-<!--Background image, horizontal navbar and vertical drop down menu-->
+<!--Blurred background image, horizontal navbar and vertical transparent drop down menu-->
 <!DOCTYPE HTML> 
 <html lang="en">
 <html>
@@ -8,19 +8,22 @@
 <style type="text/css">
   
 *{padding:0;margin:0;}
+
 body  {
-	background: url(lvivska_politehnika.jpg) no-repeat center fixed; 
+	background: url(lvivska_politehnika_blur.jpg); 
     background-size: cover;
 }
 /*VERTICAL MENU*/
 nav.vertical{
   position:relative;
-  background:#667;
-  width: 10%;
+  width: 13%;
   background-color:#f8f8f8;
+  opacity: 0.65;
+  filter: alpha (opacity=65);
   position: fixed;
   height: 100%;
   overflow: auto;
+  font-size: 20px;
 }
 /* ALL UL */
 nav.vertical ul{
@@ -41,7 +44,7 @@ nav.vertical a{
 }
 /* ALL A HOVER */
 nav.vertical li:hover > a{
-  background:#b3b3b3;
+  background:#ff6600;
 }
 /* INNER UL HIDE */
 nav.vertical ul ul{
@@ -56,7 +59,8 @@ nav.vertical li:hover > ul{
   max-height:500px;
   transition: max-height 0.25s ease-in;
 }
-</style>
+
+</style> 
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
@@ -78,11 +82,9 @@ nav.vertical li:hover > ul{
 <nav class="vertical"> 
 <ul>
 
-<li><a href="#attendance">---</a>
-<li><a href="#attendance">---</a>
-<li><a href="#attendance">---</a>
+<li><a href="#">---</a>
+<li><a href="#">---</a>
 
-	
     <li><a href="#attendance">Відвідування</a> 
       <ul>
         
@@ -93,14 +95,14 @@ nav.vertical li:hover > ul{
           </ul>
         </li>		
 		
-        <li><a href="#discrete">Дискретна матем.</a>
+		<li><a href="#discrete">Дискретна матем.</a>
           <ul>
             <li><a href="#lect">Лекції</a></li>
             <li><a href="#prac">Практичні</a></li>  
           </ul>
         </li>
 		
-        <li><a href="#programming">Програмування</a>
+		<li><a href="#programming">Програмування</a>
           <ul>
             <li><a href="#lect">Лекції</a></li>
             <li><a href="#prac">Практичні</a></li> 
@@ -116,31 +118,31 @@ nav.vertical li:hover > ul{
           </ul>
         </li>
 		
-        <li><a href="#ukr">Укр. мова</a>
+		<li><a href="#ukr">Укр. мова</a>
           <ul>
             <li><a href="#lect">Лекції</a></li>
             <li><a href="#prac">Практичні</a></li>  
           </ul>
         </li>
 		
-        <li><a href="#eng">Англ. мова</a>
-          <ul>
+		<li><a href="#eng">Англ. мова</a>
+		  <ul>
             <li><a href="#prac">Практичні</a></li>  
           </ul>
-        </li>
+		</li>
 		
-        <li><a href="#eltech">Електротехніка</a>
+	    <li><a href="#eltech">Електротехніка</a>
           <ul>
             <li><a href="#lect">Лекції</a></li>
             <li><a href="#prac">Практичні</a></li>  
           </ul>
         </li>
 		
-        <li><a href="#sport">Фіз. виховання</a>
-          <ul>
+		<li><a href="#sport">Фіз. виховання</a>
+		  <ul>
             <li><a href="#prac">Практичні</a></li>  
           </ul>
-        </li>
+		</li>
 		
       </ul>
     </li>
@@ -156,14 +158,14 @@ nav.vertical li:hover > ul{
           </ul>
         </li>
 		
-        <li><a href="#discrete">Дискретна матем.</a>
+	    <li><a href="#discrete">Дискретна матем.</a>
           <ul>
             <li><a href="#lect">Лекції</a></li>
             <li><a href="#prac">Практичні</a></li>  
           </ul>
         </li>
 		
-        <li><a href="#programming">Програмування</a>
+		<li><a href="#programming">Програмування</a>
           <ul>
             <li><a href="#lect">Лекції</a></li>
             <li><a href="#prac">Практичні</a></li> 
@@ -179,31 +181,31 @@ nav.vertical li:hover > ul{
           </ul>
         </li>
 		
-        <li><a href="#ukr">Укр. мова</a>
+		<li><a href="#ukr">Укр. мова</a>
           <ul>
             <li><a href="#lect">Лекції</a></li>
             <li><a href="#prac">Практичні</a></li>  
           </ul>
         </li>
 		
-        <li><a href="#eng">Англ. мова</a>
-          <ul>
+		<li><a href="#eng">Англ. мова</a>
+		  <ul>
             <li><a href="#prac">Практичні</a></li>  
           </ul>
-        </li>
+		</li>
 		
-        <li><a href="#eltech">Електротехніка</a>
+	    <li><a href="#eltech">Електротехніка</a>
           <ul>
             <li><a href="#lect">Лекції</a></li>
             <li><a href="#prac">Практичні</a></li>  
           </ul>
         </li>
 		
-        <li><a href="#sport">Фіз. виховання</a>
-          <ul>
+		<li><a href="#sport">Фіз. виховання</a>
+		  <ul>
             <li><a href="#prac">Практичні</a></li>  
           </ul>
-        </li>
+		</li>
 		
       </ul>
     </li>
@@ -212,9 +214,9 @@ nav.vertical li:hover > ul{
     <li><a href="#gpa">Середній бал</a>
 	<ul>
             <li><a href="#sub">Із предмету</a></li>  
-	    <li><a href="#sum">За семестр</a></li> 
-	</ul>
-    </li> 
+			<li><a href="#sum">За семестр</a></li> 
+          </ul>
+	</li> 
   </ul>
 </nav>
 
@@ -232,7 +234,7 @@ nav.vertical li:hover > ul{
 		
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="profile.html">Моя сторінка</a></li>  
+                <li><a href="profile.html">Моя сторінка студента</a></li>  
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
