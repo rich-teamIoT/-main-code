@@ -1,7 +1,5 @@
 from flask import request, abort, jsonify, Blueprint
 from Config import mysql
-from UUID import uuid_api
-from Config import app
 logining_api=Blueprint('logining_api', __name__)
 
 @logining_api.route('/api/login', methods=['Post'])
@@ -24,6 +22,9 @@ def singIN():
     param_logining=(login, password)
     cur.execute(query_logining, param_logining)
     if cur.fetchone()[0]==1:
-       return jsonify(session_id="1"), 200
+        query_id = 'Скрипт який з бази даних витягне id користувача за login'
+        param_id = (id)
+        cur.execute(query_id, param_id)
+        return jsonify(user_id=id), 200
     cur.close()
 
