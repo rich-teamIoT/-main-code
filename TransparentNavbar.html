@@ -8,7 +8,7 @@ body  {
 	background: url(lvivska_politehnika_blur.jpg); 
     background-size: cover;
 }
-ul {
+.navbar,.navbar .subitems {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -19,11 +19,11 @@ ul {
     font-size: 20px;
 }
 
-li {
+.navbar li {
     float: left;
 }
 
-li a {
+.navbar li a {
     display: block;
     color: black;
     text-align: center;
@@ -31,20 +31,20 @@ li a {
     text-decoration: none;
 }
 
-li a:hover:not(.active) {
+.navbar li a:hover:not(.active) {
     background-color: #ff6600;
 }
 
-.active {
+.navbar .active {
     background-color: rgba (0,0,0,0.1);
 }
 
-ul ul{
+.navbar .subitems {
   max-height:0;
   overflow:hidden;
 }
 
-li:hover > ul{
+.navbar li:hover > ul{
   max-height:500px;
   transition: max-height 0.25s ease-in;
 }
@@ -53,11 +53,11 @@ li:hover > ul{
 </head>
 <body>
 
-<ul>
+<ul class="navbar">
   <li><a class="active" href="#">ЖУРНАЛ НУ "ЛП"</a></li>
   <li><a class="active" href="#">Моя сторінка користувача</a></li>
   <li style="float:right"><a href="#">Мій профіль</a>
-    <ul>
+    <ul class="subitems">
         <li><a href="#">Переглянути</a></li> 
         <li><a href="#">Редагувати</a></li> 
         <li><a href="#">Вийти</a></li> 

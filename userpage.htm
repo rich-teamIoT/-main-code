@@ -58,6 +58,46 @@ nav.vertical li:hover > ul{
   max-height:500px;
   transition: max-height 0.25s ease-in;
 }
+.navbar,.navbar .subitems {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#f8f8f8;
+    opacity: 0.65;
+    filter: alpha (opacity=65);
+    font-size: 20px;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover:not(.active) {
+    background-color: #ff6600;
+}
+
+.navbar .active {
+    background-color: rgba (0,0,0,0.1);
+}
+
+.navbar .subitems {
+  max-height:0;
+  overflow:hidden;
+}
+
+.navbar li:hover > ul{
+  max-height:500px;
+  transition: max-height 0.25s ease-in;
+}
 
 </style> 
 
@@ -213,11 +253,11 @@ nav.vertical li:hover > ul{
   </ul>
 </nav>
 
-<ul>
+<ul class="navbar">
   <li><a class="active" href="#">ЖУРНАЛ НУ "ЛП"</a></li>
   <li><a class="active" href="#">Моя сторінка користувача</a></li>
   <li style="float:right"><a href="#">Мій профіль</a>
-    <ul>
+    <ul class="subitems">
         <li><a href="#">Переглянути</a></li> 
         <li><a href="#">Редагувати</a></li> 
         <li><a href="#">Вийти</a></li> 
