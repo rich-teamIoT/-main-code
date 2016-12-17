@@ -1,0 +1,198 @@
+<!DOCTYPE HTML> 
+<html lang="en">
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Журнал НУ "ЛП"</title>
+<style type="text/css">
+  
+*{padding:0;margin:0;}
+
+body  {
+	background: url(lvivska_politehnika_blur.jpg); 
+    background-size: cover;
+}
+/*VERTICAL MENU*/
+nav.vertical{
+  position:relative;
+  width: 13%;
+  background-color:#f8f8f8;
+  opacity: 0.65;
+  filter: alpha (opacity=65);
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  font-size: 20px;
+  font-family: Cursive;
+}
+
+nav.vertical ul{
+  list-style: none;
+  text-align: center;
+}
+/* ALL LI */
+nav.vertical li{
+  position:relative;
+}
+/* ALL A */
+nav.vertical a{
+  display:block;
+  color:#000000;
+  text-decoration:none;
+  padding:10px 15px;
+  transition:0.2s;
+}
+/* ALL A HOVER */
+nav.vertical li:hover > a{
+  background:#ff6600;
+}
+/* INNER UL HIDE */
+nav.vertical ul ul{
+  background:rgba(0,0,0,0.1);
+  padding-left:20px;
+  transition: max-height 0.2s ease-out;
+  max-height:0;
+  overflow:hidden;
+}
+/* INNER UL SHOW */
+nav.vertical li:hover > ul{
+  max-height:500px;
+  transition: max-height 0.25s ease-in;
+}
+.navbar,.navbar .subitems {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#f8f8f8;
+    opacity: 0.65;
+    filter: alpha (opacity=65);
+    font-size: 20px;
+    font-family: Cursive;
+}
+.navbar li {
+    float: left;
+}
+.navbar li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navbar li a:hover:not(.active) {
+    background-color: #ff6600;
+}
+.navbar .active {
+    background-color: rgba (0,0,0,0.1);
+}
+.navbar .subitems {
+  max-height:0;
+  overflow:hidden;
+}
+.navbar li:hover > ul{
+  max-height:500px;
+  transition: max-height 0.25s ease-in;
+}
+</style> 
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<nav class="vertical"> 
+<ul>
+
+<li><a href="#">.</a>
+
+    <li><a href="#">Мат. аналіз</a>
+      <ul>
+        
+        <li><a href="#">Лекції</a>
+          <ul>
+            <li><a href="#">КН-124</a></li> 
+            <li><a href="#">КН-125</a></li> 
+          </ul>
+        </li>		
+		
+		<li><a href="#discrete">Практичні</a>
+          <ul>
+            <li><a href="#">КН-124</a></li> 
+            <li><a href="#">КН-125</a></li> 
+          </ul>
+        </li>
+	  </ul>
+
+    <li><a href="#">Лінійна алгебра</a>
+      <ul>
+		
+        <li><a href="#">Лекції</a>
+          <ul>
+            <li><a href="#">КН-124</a></li> 
+            <li><a href="#">КН-125</a></li> 
+          </ul>
+        </li>		
+		
+		<li><a href="#">Практичні</a>
+          <ul>
+            <li><a href="#">КН-124</a></li> 
+            <li><a href="#">КН-125</a></li> 
+          </ul>
+        </li>
+	  </ul>
+	
+    <li><a href="#">Дискретна матем.</a>
+	<ul>
+	
+    <li><a href="#">Лекції</a>
+          <ul>
+            <li><a href="#">КН-124</a></li> 
+            <li><a href="#">КН-125</a></li> 
+          </ul>
+        </li>		
+		
+		<li><a href="#discrete">Практичні</a>
+          <ul>
+            <li><a href="#">КН-124</a></li> 
+            <li><a href="#">КН-125</a></li> 
+          </ul>
+        </li>
+     
+  </ul>
+  
+  <script>
+  $.ajax(....onSuccess(result){
+document.getElementById('subjects').innerHTML = generateSubjects(result);
+})function generateSubjects(subjectList){
+var result = '';for(subject : subjectList){
+result += generateSubject(subject);
+}
+return result;
+}function generateSubject(subject) {
+return "<div class='subject'>"+subject.name+"</div>;
+}
+  </script>
+  
+</nav>
+
+<ul class="navbar">
+  <li><a class="active" href="#">ЖУРНАЛ НУ "ЛП"</a></li>
+  <li><a class="active" href="#">Моя сторінка викладача</a></li>
+  <li style="float:right"><a href="#">Мій профіль</a>
+    <ul class="subitems">
+        <li><a href="#">Переглянути</a></li> 
+        <li><a href="#">Редагувати</a></li> 
+        <li><a href="#">Вийти</a></li> 
+    </ul>
+  </li>
+</ul>
+
+</body>
+</html>
