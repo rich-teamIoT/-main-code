@@ -1,3 +1,3 @@
 from flask import Blueprint
 
-doctor_page=Blueprint('doctor-page', __name__)
+profesor_page=Blueprint('profesor_page', __name__)

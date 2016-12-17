@@ -1,9 +1,18 @@
-from flask import Blueprint
+from flask import Blueprint, request, abort
 from Config import app
 from Student_page import student_page
-from Doctor_page import doctor_page
+from Doctor_page import profesor_page
 user_page=Blueprint('user_page', __name__)
 
-app.register_blueprint(student_page)
-app.register_blueprint(doctor_page)
+@user_page.route('/usercheck')
+def User():
+    if not request.json or 'user' not in request.json:
+        abort(400)
+    user=request.json['user']
+    if user is None:
+        abort(400)
+    if user is 'student':
+        app.register_blueprint(student_page)
+    if user is 'profesor':
+        app.register_blueprint(profesor_page)
 

@@ -1,4 +1,4 @@
-from flask import Blueprint, request, abort, jsonify
+from flask import Blueprint, request, abort, jsonify, redirect
 from Config import mysql
 register_api = Blueprint('register_api', __name__)
 
@@ -50,4 +50,4 @@ def register():
     cur.execute(query_save, param_save)
     conn.commit()
     cur.close()
-    return jsonify(message='user created', status='success'), 201
+    return jsonify(status='success'), 201
