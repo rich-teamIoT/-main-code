@@ -22,9 +22,14 @@ def singIN():
     param_logining=(login, password)
     cur.execute(query_logining, param_logining)
     if cur.fetchone()[0]==1:
-        query_id = 'Скрипт який з бази даних витягне id користувача за login'
-        param_id = (id)
-        cur.execute(query_id, param_id)
-        return jsonify(user_id=id), 200
+        conn=mysql.connect()
+        cur=conn.cursor
+        query_id='скрипт який вийтяне з бази данних id за логіном'
+        param_id=(id)
+        cur.execute(query_id,param_id)
+        return jsonify(id=id), 200
+    if cur.fetchone()[0] == 0:
+        return jsonify(status="wrong login or password"), 400
     cur.close()
+
 
