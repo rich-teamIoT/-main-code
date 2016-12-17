@@ -1,0 +1,5 @@
+DROP DATABASE IF EXISTS journallpnu;
+CREATE DATABASE journallpnu;
+USE journallpnu;
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, login VARCHAR(100), user_name VARCHAR(100), email VARCHAR(100), password VARCHAR(100));
