@@ -1,4 +1,3 @@
-<!--Blurred background image, horizontal navbar and vertical transparent drop down menu-->
 <!DOCTYPE HTML> 
 <html lang="en">
 <html>
@@ -8,7 +7,6 @@
 <style type="text/css">
   
 *{padding:0;margin:0;}
-
 body  {
 	background: url(lvivska_politehnika_blur.jpg); 
     background-size: cover;
@@ -24,6 +22,7 @@ nav.vertical{
   height: 100%;
   overflow: auto;
   font-size: 20px;
+  font-family: Cursive;
 }
 /* ALL UL */
 nav.vertical ul{
@@ -59,7 +58,41 @@ nav.vertical li:hover > ul{
   max-height:500px;
   transition: max-height 0.25s ease-in;
 }
-
+.navbar,.navbar .subitems {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#f8f8f8;
+    opacity: 0.65;
+    filter: alpha (opacity=65);
+    font-size: 20px;
+    font-family: Cursive;
+}
+.navbar li {
+    float: left;
+}
+.navbar li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navbar li a:hover:not(.active) {
+    background-color: #ff6600;
+}
+.navbar .active {
+    background-color: rgba (0,0,0,0.1);
+}
+.navbar .subitems {
+  max-height:0;
+  overflow:hidden;
+}
+.navbar li:hover > ul{
+  max-height:500px;
+  transition: max-height 0.25s ease-in;
+}
 </style> 
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -69,21 +102,14 @@ nav.vertical li:hover > ul{
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script>
-        .center-block {
-            display: block;
-            margin-right: auto;
-            margin-left: auto;
-        }
-    </script>
+
 </head>
 
 <body>
 <nav class="vertical"> 
 <ul>
 
-<li><a href="#">---</a>
-<li><a href="#">---</a>
+<li><a href="#">.</a>
 
     <li><a href="#attendance">Відвідування</a> 
       <ul>
@@ -110,7 +136,7 @@ nav.vertical li:hover > ul{
           </ul>
         </li>
 		
-        <li><a href="#physics">Фізика</a>
+	    <li><a href="#physics">Фізика</a>
           <ul>
             <li><a href="#lect">Лекції</a></li>
             <li><a href="#prac">Практичні</a></li> 
@@ -220,35 +246,30 @@ nav.vertical li:hover > ul{
   </ul>
 </nav>
 
-<nav class="navbar navbar-default"> 
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand">ЖУРНАЛ "НУ ЛП"</a>
-        </div>
-		
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="profile.html">Моя сторінка студента</a></li>  
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Мій профіль<span class="caret"></span></a>                
-		    <ul class="drop down-menu">
-                        <li><a href="perstor.html">Переглянути</a> </li>
-                        <li><a href="redpage.html">Редагувати профіль</a></li>
-                        <li><a href="index.html">Вийти</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+  <script>
+  $.ajax(....onSuccess(result){
+document.getElementById('subjects').innerHTML = generateSubjects(result);
+})function generateSubjects(subjectList){
+var result = '';for(subject : subjectList){
+result += generateSubject(subject);
+}
+return result;
+}function generateSubject(subject) {
+return "<div class='subject'>"+subject.name+"</div>;
+}
+  </script>
+
+<ul class="navbar">
+  <li><a class="active" href="#">ЖУРНАЛ НУ "ЛП"</a></li>
+  <li><a class="active" href="#">Моя сторінка студента</a></li>
+  <li style="float:right"><a href="#">Мій профіль</a>
+    <ul class="subitems">
+        <li><a href="#">Переглянути</a></li> 
+        <li><a href="#">Редагувати</a></li> 
+        <li><a href="#">Вийти</a></li> 
+    </ul>
+  </li>
+</ul>
 
 </body>
 </html>
