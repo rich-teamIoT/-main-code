@@ -1,7 +1,8 @@
-from flask import send_from_directory, redirect
-from Register_api import register_api
-from Logining_api import logining_api
 from Config import app
+from flask import send_from_directory, redirect
+from Logining_api import logining_api
+from Register_api import register_api
+
 
 @app.route('/')
 def index():

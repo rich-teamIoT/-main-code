@@ -1,5 +1,7 @@
-from flask import Blueprint, request, abort, jsonify, redirect
 from Config import mysql
+from flask import Blueprint, request, abort, jsonify
+
+
 register_api = Blueprint('register_api', __name__)
 
 @register_api.route('/api/register', methods=['Post'])
