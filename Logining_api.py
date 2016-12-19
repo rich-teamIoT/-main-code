@@ -24,14 +24,14 @@ def singIN():
     param_logining=(login, password)
     cur.execute(query_logining, param_logining)
     if cur.fetchone()[0]==1:
-        conn = mysql.connect()
-        cur = conn.cursor()
-        query_id = 'select id from user_list where login=%s'
-        param_id = (login, id)
-        cur.execute(query_id, param_id)
-        data = cur.fetchall()
-        jsonify(id=data), 200
-        cur.close()
+        connect=mysql.connect()
+        cursor=connect.cursor()
+        query_id='select id from user_list where login=%s'
+        param_id=(login)
+        cursor.execute(query_id, param_id)
+        data=cursor.fetchone()
+        return jsonify(user_id="%s"% data), 200
+    cur.close()
 
 
 
