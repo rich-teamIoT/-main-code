@@ -1,5 +1,6 @@
-from flask import Blueprint, request, abort, jsonify
 from Config import mysql
+from flask import Blueprint, request, abort, jsonify
+
 
 student_page=Blueprint('student_page', __name__)
 

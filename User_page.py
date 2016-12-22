@@ -1,7 +1,8 @@
-from flask import Blueprint, request, abort
 from Config import app
-from Student_page import student_page
+from flask import Blueprint, request, abort
 from Doctor_page import profesor_page
+from Student_page import student_page
+
 user_page=Blueprint('user_page', __name__)
 
 @user_page.route('/usercheck')
