@@ -26,12 +26,13 @@ def singIN():
     if cur.fetchone()[0]==1:
         connect=mysql.connect()
         cursor=connect.cursor()
-        query_id='select id from list_of_user where name=%s'
+        query_id = 'select id from list_of_user where name=%s'
         param_id=(name)
         cursor.execute(query_id, param_id)
         data=cursor.fetchone()
         return jsonify(user_id="%s"% data), 200
     cur.close()
+
 
 
 

@@ -96,6 +96,8 @@
 				};
 
 				$.ajax({
+					method: "POST",
+					contentType: "application/json",
 					type: "POST",
 					url: "/api/login",
 					dataType: "json",
@@ -138,7 +140,7 @@
 					},
 					error: function() {
 						alert("Щось пішло не так! :(");
-					}
+					},
 				});
 			});
 		});
