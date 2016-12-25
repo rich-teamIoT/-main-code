@@ -16,63 +16,14 @@
 			background-image: url('228.jpg');
 			background-repeat: no-repeat;
 			background-attachment: fixed;
-			background-position: center;
+			background-position: center; 
 		}
 	</style>
 </head>
 <body>
-<div class="pen-title">
-	<h1>Журнал НУ "ЛП"</h1>
-</div>
-<div class="rerun"><a href="">Скинути дані</a></div>
-<div class="container">
-	<div class="card"></div>
-	<div class="card">
-		<h1 class="title">Вхід</h1>
-		<form>
-			<div class="input-container">
-				<input type="name" id="LoginName" required="required"/>
-				<label for="LoginName">Ім'я</label>
-				<div class="bar"></div>
-			</div>
-			<div class="input-container">
-				<input type="password" id="LoginPassword" required="required"/>
-				<label for="LoginPassword">Пароль</label>
-				<div class="bar"></div>
-			</div>
-			<div class="button-container">
-				<button id="loginButton"><span>Увійти</span></button>
-			</div>
-			<div class="footer"><a href="password.html">Забули пароль?</a></div>
-		</form>
+	<div class="pen-title">
+		<h1>Журнал НУ "ЛП"</h1>
 	</div>
-<<<<<<< HEAD
-	<div class="card alt">
-		<div class="toggle"></div>
-		<h1 class="title">Реєстрація
-			<div class="close"></div>
-		</h1>
-		<form>
-			<div class="input-container">
-				<input type="name" id="RegisterName" required="required"/>
-				<label for="RegisterName">Ім'я користувача</label>
-				<div class="bar"></div>
-			</div>
-			<div class="input-container">
-				<input type="password" id="RegiterPassword" required="required"/>
-				<label for="RegiterPassword">Пароль</label>
-				<div class="bar"></div>
-			</div>
-			<div class="input-container">
-				<input type="password" id="RepeatPassword" required="required"/>
-				<label for="RepeatPassword">Повторити пароль</label>
-				<div class="bar"></div>
-			</div>
-			<div class="button-container">
-				<button id="registrationButton"><span>Продовжити</span></button>
-			</div>
-		</form>
-=======
 	<div class="rerun"><a href="">Скинути дані</a></div>
 	<div class="container">
 		<div class="card"></div>
@@ -80,13 +31,13 @@
 			<h1 class="title">Вхід</h1>
 			<form>
 				<div class="input-container">
-					<input type="name" id="input#inputName3" required="required"/>
-					<label for="input#inputName3">Ім'я</label>
+					<input type="name" id="LoginName" required="required"/>
+					<label for="LoginName">Ім'я</label>
 					<div class="bar"></div>
 				</div>
 				<div class="input-container">
-					<input type="password" id="input#inputPassword3" required="required"/>
-					<label for="input#inputPassword3">Пароль</label>
+					<input type="password" id="LoginPassword" required="required"/>
+					<label for="LoginPassword">Пароль</label>
 					<div class="bar"></div>
 				</div>
 				<div class="button-container">
@@ -100,101 +51,46 @@
 			<h1 class="title">Реєстрація
 				<div class="close"></div>
 			</h1>
-			<form>
+			<form action="StudentPage.html">
 				<div class="input-container">
-					<input type="name" id="input#inputName3" required="required"/>
-					<label for="input#inputName3">Ім'я користувача</label>
+					<input type="name" id="RegisterName" required="required"/>
+					<label for="RegisterName">Ім'я користувача</label>
 					<div class="bar"></div>
 				</div>
 				<div class="input-container">
-					<input type="email" id="input#inputEmail3" required="required">
-					<label for="input#inputEmail3"> Email</label>
+					<input type="password" id="RegisterPassword" required="required"/>
+					<label for="RegisterPassword">Пароль</label>
 					<div class="bar"></div>
 				</div>
 				<div class="input-container">
-					<input type="password" id="input#inputPassword3" required="required">
-					<label for="input#inputPassword3"> Пароль</label>
-					<div class="bar"></div>
-				</div>
-				<div class="input-container">
-					<input type="password" id="input#inputPassword3" required="required"/>
-					<label for="input#inputPassword3">Повторити пароль</label>
+					<input type="password" id="RepeatPassword" required="required"/>
+					<label for="RepeatPassword">Повторити пароль</label>
 					<div class="bar"></div>
 				</div>
 				<div class="button-container">
-					<button id="registrationButton"><span>Продовжити</span></button>
+					<button type="submit" id="registrationButton"><span>Продовжити</span></button>
 				</div>
 			</form>
 		</div>
->>>>>>> 0aa449c5501434c70c2837d895d08441d7e05447
 	</div>
-</div>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src="js/index.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        /**
-         * Модуль авторизації. Ajax відправка
-         */
-        $("button#loginButton").click( function()
-        {
-            var password = $("LoginPassword").val();
-            var name = $ ("LoginName").val();
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src="js/index.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			/**
+			* Модуль авторизації. Ajax відправка
+			*/
+			$("button#loginButton").click( function()
+			{
+				var password = $("LoginPassword").val();
+				var name = $ ("LoginName").val();
 
-            var data = {
-                'name': name,
-                'password': password
-            };
+				var data = {
+					'name': name,
+					'password': password
+				};
 
-<<<<<<< HEAD
-            $.ajax({
-                type: "POST",
-                url: "/api/login",
-                dataType: "json",
-                data: JSON.stringify(data),
-                success: function() {
-                    alert("Успішно!");
-                    window.location = "studentpage.html"; // Тут заміни на посилання, куди потрібно переадресувати
-                },
-                error: function() {
-                    alert("Щось пішло не так! :(");
-                }
-            });
-        });
-
-        /**
-         * Модуль реєстрації. Ajax відправка
-         */
-        $("button#registrationButton").click( function()
-        {
-            var password = $("RegisterPassword").val();
-            var name = $("RegisterName") .val();
-
-            var data = {
-                'name': name,
-                'password': password
-            };
-
-            $.ajax({
-                type: "POST",
-                url: "/api/register",
-                dataType: "json",
-                data: JSON.stringify(data),
-                success: function() {
-                    alert("Успішно!");
-                    window.location = "#";
-                },
-                error: function() {
-                    alert("Щось пішло не так! :(");
-                }
-            });
-        });
-    });
-</script>
-=======
 				$.ajax({
-					method: "POST",
-					contentType: "application/json",
 					type: "POST",
 					url: "/api/login",
 					dataType: "json",
@@ -214,19 +110,15 @@
 			*/
 			$("button#registrationButton").click( function()
 			{
-				var password = $("input#inputPassword3").val();
-				var name = $("input#inputName3") .val();
-				var email = $("input#inputEmail3") .val();
+				var password = $("RegisterPassword").val();
+				var name = $("RegisterName") .val();
 
 				var data = {
 					'name': name,
-					'password': password,
-					'email': email
+					'password': password
 				};
 
 				$.ajax({
-					method: "POST",
-					contentType: "application/json",
 					type: "POST",
 					url: "/api/register",
 					dataType: "json",
@@ -237,11 +129,10 @@
 					},
 					error: function() {
 						alert("Щось пішло не так! :(");
-					},
+					}
 				});
 			});
 		});
 	</script>
->>>>>>> 0aa449c5501434c70c2837d895d08441d7e05447
 </body>
 </html>
