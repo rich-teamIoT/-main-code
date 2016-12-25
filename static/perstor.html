@@ -1,0 +1,171 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Журнал НУ "ЛП"</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <style type="text/css">
+            body {
+                background-image: url('228.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color:#f8f8f8;
+                opacity: 0.65;
+                filter: alpha (opacity=65);
+                font-size: 20px;
+            }
+            li {
+                float: left;
+            }
+            li a {
+                display: block;
+                color: black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            li a:hover:not(.active) {
+                background-color: #ff6600;
+            }
+            .active {
+                background-color: rgba(0,0,0,0.1);
+            }
+            ul ul{
+                background:rgba(0,0,0,0.1);
+                padding-left:20px;
+                transition: max-height 0.2s ease-out;
+                max-height:0;
+                overflow:hidden;
+            }
+            li:hover > ul{
+                max-height:500px;
+                transition: max-height 0.25s ease-in;
+            }
+            .panel {
+            	background-color: rgba(0,0,0,0.1);
+            }
+        </style>
+    </head>
+    <body>
+
+        <ul>
+            <li><a class="active" href="#">ЖУРНАЛ НУ "ЛП"</a></li>
+            <li><a class="active" href="StudentPage.html">Моя сторінка користувача</a></li>
+            <li style="float:right"><a href="#">Мій профіль</a>
+                <ul>
+                    <li><a href="perstor.html">Переглянути</a></li>
+                    <li><a href="redpage.html">Редагувати</a></li>
+                    <li><a href="index.html">Вийти</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-sm-12 col-md-4 col-lg-4">
+                    <div class="text-left">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img src="http://zano.ru/avatar/images/200j291.jpg" class="avatar img-circle img-thumbnail" alt="avatar">
+                                <h4>Завантажте ваше фото</h4>
+                                <input type="file" class="text-left left-block well well-sm">
+                                <ul class="list-group" style="text-align: center">
+                                   <b>Іот Іотович</b><br/>
+                                   Студент<br/>
+                                   <span class="glyphicon glyphicon-briefcase"></span>1 курс<br/>
+                                   <span class="glyphicon glyphicon-map-marker"></span> Україна<br/>
+                                   <span class="glyphicon glyphicon-phone"></span>0931359123<br/>
+                                   <span class="glyphicon glyphicon-envelope"></span>iot123@gmail.com<br/>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" style="text-align: center">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="hve-pro">
+                            <p><b><big>Інформація про себе</big></b></p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="table-responsive responsiv-table">
+                                <table class="table bio-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Прізвище:</td>
+                                            <td>Іотович</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ім'я:</td>
+                                            <td>Іот</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Дата народження:</td>
+                                            <td>10.10.1999</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Країна:</td>
+                                            <td>Україна</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Місце навчання:</td>
+                                            <td>"НУ ЛП"</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="table-responsive responsiv-table">
+                                <table class="table bio-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Email:</td>
+                                            <td>iot123@gmail.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Мобільний:</td>
+                                            <td>0931359123</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Курс навчання:</td>
+                                            <td>1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
