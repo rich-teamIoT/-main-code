@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Журнал НУ "ЛП"</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style type="text/css">
+        body {
+            background-image: url('228.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color:#f8f8f8;
+            opacity: 0.65;
+            filter: alpha (opacity=65);
+            font-size: 20px;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover:not(.active) {
+            background-color: #ff6600;
+        }
+        .active {
+            background-color: rgba (0,0,0,0.1);
+        }
+        ul ul{
+            background:rgba(0,0,0,0.1);
+            padding-left:20px;
+            transition: max-height 0.2s ease-out;
+            max-height:0;
+            overflow:hidden;
+        }
+        li:hover > ul{
+            max-height:500px;
+            transition: max-height 0.25s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a class="active" href="#">ЖУРНАЛ НУ "ЛП"</a></li>
+        <li><a class="active" href="StudentPage.html">Моя сторінка користувача</a></li>
+        <li style="float:right"><a href="#">Мій профіль</a>
+            <ul>
+                <li><a href="perstor.html">Переглянути</a></li>
+                <li><a href="redpage.html">Редагувати</a></li>
+                <li><a href="index.html">Вийти</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="pen-title">
+        <h1>Редагування даних користувача</h1>
+    </div>
+    <div class="container">
+        <div class="card"></div>
+        <div class="card">
+            <h1 class="title">Крок 1</h1>
+            <form>
+                <div class="input-container">
+                    <input type="text" id="surname" required="required"/>
+                    <label for="surname">Прізвище</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="name" required="required"/>
+                    <label for="name">Ім'я</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="input-container">
+                    <input type="email" id="email" required="required"/>
+                    <label for="email">E-mail</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="input-containerNext">
+                    <input type="text" id="mobileNumber" required="required" value="+380" />
+                    <label for="mobileNumber">Мобільний</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="button-container">
+                    <button id="nextButton"><span>Далі</span></button>
+                </div>
+            </form>
+        </div>
+        <div class="card next">
+            <h1 class="titleNext">Крок 2
+                <div class="closeNext"></div>
+            </h1>
+            <div class="toggleNext"></div>
+            <form action="perstor.html">
+                <div class="input-containerNext">
+                    <input type="type" id="institute" required="required" maxlength="4" />
+                    <label for="institute">Інститут</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="input-containerNext">
+                    <input type="type" id="department" required="required"/>
+                    <label for="department">Факультет</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="input-containerNext">
+                    <input type="type" id="group" required="required"/>
+                    <label for="group">Група</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="input-containerNext">
+                    <input type="type" id="course" required="required"/>
+                    <label for="course">Курс</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="button-containerNext">
+                    <button type="submit" id="finishButton"><span>Завершити</span></button>
+                </div>
+            </form>
+        </div>
+        <div class="card alt">
+            <div class="toggle"></div>
+            <h1 class="title">Логін/Пароль
+                <div class="close"></div>
+            </h1>
+            <form>
+                <div class="input-container">
+                    <input type="text" id="login" required="required" />
+                    <label for="login">Змінити логін</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="password" required="required" />
+                    <label for="password">Змінити пароль</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="repeatPassword" required="required" />
+                    <label for="password">Підтвердіть пароль</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="button-container">
+                    <button id="registrationButton"><span>Змінити</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
