@@ -46,6 +46,7 @@
 			<div class="footer"><a href="password.html">Забули пароль?</a></div>
 		</form>
 	</div>
+<<<<<<< HEAD
 	<div class="card alt">
 		<div class="toggle"></div>
 		<h1 class="title">Реєстрація
@@ -71,6 +72,61 @@
 				<button id="registrationButton"><span>Продовжити</span></button>
 			</div>
 		</form>
+=======
+	<div class="rerun"><a href="">Скинути дані</a></div>
+	<div class="container">
+		<div class="card"></div>
+		<div class="card">
+			<h1 class="title">Вхід</h1>
+			<form>
+				<div class="input-container">
+					<input type="name" id="input#inputName3" required="required"/>
+					<label for="input#inputName3">Ім'я</label>
+					<div class="bar"></div>
+				</div>
+				<div class="input-container">
+					<input type="password" id="input#inputPassword3" required="required"/>
+					<label for="input#inputPassword3">Пароль</label>
+					<div class="bar"></div>
+				</div>
+				<div class="button-container">
+					<button id="loginButton"><span>Увійти</span></button>
+				</div>
+				<div class="footer"><a href="password.html">Забули пароль?</a></div>
+			</form>
+		</div>
+		<div class="card alt">
+			<div class="toggle"></div>
+			<h1 class="title">Реєстрація
+				<div class="close"></div>
+			</h1>
+			<form>
+				<div class="input-container">
+					<input type="name" id="input#inputName3" required="required"/>
+					<label for="input#inputName3">Ім'я користувача</label>
+					<div class="bar"></div>
+				</div>
+				<div class="input-container">
+					<input type="email" id="input#inputEmail3" required="required">
+					<label for="input#inputEmail3"> Email</label>
+					<div class="bar"></div>
+				</div>
+				<div class="input-container">
+					<input type="password" id="input#inputPassword3" required="required">
+					<label for="input#inputPassword3"> Пароль</label>
+					<div class="bar"></div>
+				</div>
+				<div class="input-container">
+					<input type="password" id="input#inputPassword3" required="required"/>
+					<label for="input#inputPassword3">Повторити пароль</label>
+					<div class="bar"></div>
+				</div>
+				<div class="button-container">
+					<button id="registrationButton"><span>Продовжити</span></button>
+				</div>
+			</form>
+		</div>
+>>>>>>> 0aa449c5501434c70c2837d895d08441d7e05447
 	</div>
 </div>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
@@ -90,6 +146,7 @@
                 'password': password
             };
 
+<<<<<<< HEAD
             $.ajax({
                 type: "POST",
                 url: "/api/login",
@@ -134,5 +191,57 @@
         });
     });
 </script>
+=======
+				$.ajax({
+					method: "POST",
+					contentType: "application/json",
+					type: "POST",
+					url: "/api/login",
+					dataType: "json",
+					data: JSON.stringify(data),
+					success: function() {
+						alert("Успішно!");
+						window.location = "studentpage.html"; // Тут заміни на посилання, куди потрібно переадресувати
+					},
+					error: function() {
+						alert("Щось пішло не так! :(");
+					}
+				});
+			});
+
+			/**
+			* Модуль реєстрації. Ajax відправка
+			*/
+			$("button#registrationButton").click( function()
+			{
+				var password = $("input#inputPassword3").val();
+				var name = $("input#inputName3") .val();
+				var email = $("input#inputEmail3") .val();
+
+				var data = {
+					'name': name,
+					'password': password,
+					'email': email
+				};
+
+				$.ajax({
+					method: "POST",
+					contentType: "application/json",
+					type: "POST",
+					url: "/api/register",
+					dataType: "json",
+					data: JSON.stringify(data),
+					success: function() {
+						alert("Успішно!");
+						window.location = "#";
+					},
+					error: function() {
+						alert("Щось пішло не так! :(");
+					},
+				});
+			});
+		});
+	</script>
+>>>>>>> 0aa449c5501434c70c2837d895d08441d7e05447
 </body>
 </html>

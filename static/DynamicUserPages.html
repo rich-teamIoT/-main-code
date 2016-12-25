@@ -1,0 +1,50 @@
+<html>
+<head><title>Журнал НУ ЛП</title></head>
+<body>
+<input type="button" id="magicButton" onmousedown="true" onmouseup="retrieveData()"/>
+<div id="placeholder"></div>
+<script language="javascript">
+
+var isLoaded = false;
+function retrieveData(){
+    if(isLoaded){
+        generateInitialData();
+        isLoaded = false;
+        return;
+
+    }
+
+  $.ajax(....onSuccess(result){
+document.getElementById('subjects').innerHTML = generateSubjects(result);
+})function generateSubjects(subjectList){
+var result = '';for(subject : subjectList){
+result += generateSubject(subject);
+}
+return result;
+}function generateSubject(subject) {
+return "<div class='subject'>"+subject.name+"</div>;
+}
+
+    var result = [{id:1, name:"subject 1"}, {id:2, name:"subject 2"}];
+    var element = document.getElementById("placeholder");
+
+    element.innerHTML = '<ul>' +
+            result.map(function(subject){
+                return '<li><span><a href="http://localhost:8080/subjectInfo?subject='+subject.id+'">' + subject.name + '</a></span></li>';
+            }).join('') + 
+            '</ul>';
+     isLoaded = true;
+     document.getElementById("magicButton").value = "Reset data";
+}
+
+function generateInitialData(){
+  var element = document.getElementById("placeholder");
+  element.innerHTML = "<i><span onclick='retrieveData()'>Please, click the button above</span></i>";
+  var button = document.getElementById("magicButton");
+  button.value = "Load Data";
+}
+generateInitialData();
+
+</script>
+</body>
+</html>
